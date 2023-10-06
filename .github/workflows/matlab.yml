@@ -14,5 +14,5 @@ jobs:
       - name: Run tests and generate artifacts
         uses: matlab-actions/run-tests@v1
         with:
-          test-results-junit: test-results/results.xml
-          code-coverage-cobertura: code-coverage/coverage.xml
+          test-results-junit: tests/results/results.xml
+          code-coverage-cobertura: tests/coverage/coverage.xml

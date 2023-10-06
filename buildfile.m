@@ -5,10 +5,17 @@ function plan = buildfile()
     plan = buildplan(localfunctions());
 
     % Add the "check" task to identify code issues.
-    plan("check") = matlab.buildtool.tasks.CodeIssuesTask("src");
+    sourceFolder = "src";
+
+    plan("check") = matlab.buildtool.tasks.CodeIssuesTask(sourceFolder);
 
     % Add the "test" task to run tests.
-    plan("test") = matlab.buildtool.tasks.TestTask("tests");
+    testFolder = "tests";
+
+    plan("test") = matlab.buildtool.tasks.TestTask(testFolder, ...
+        SourceFiles = sourceFolder, ...
+        TestResults = fullfile(testFolder, "results/results.xml"), ...
+        CodeCoverageResults = fullfile(testFolder, "coverage/coverage.xml"));
 
     % Make sure tasks run by default.
     plan.DefaultTasks = ["check", "test"];
