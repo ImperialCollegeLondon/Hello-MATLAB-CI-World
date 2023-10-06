@@ -2,12 +2,13 @@ function plan = buildfile()
 % BUILDFILE File invoked by automated build
 
     % Create a plan from task functions.
-    plan = buildplan(localfunctions());
+    plan = buildplan();
 
     % Add the "check" task to identify code issues.
     sourceFolder = "src";
 
-    plan("check") = matlab.buildtool.tasks.CodeIssuesTask(sourceFolder);
+    plan("check") = matlab.buildtool.tasks.CodeIssuesTask(sourceFolder, ...
+        IncludeSubfolders = true);
 
     % Add the "test" task to run tests.
     testFolder = "tests";
