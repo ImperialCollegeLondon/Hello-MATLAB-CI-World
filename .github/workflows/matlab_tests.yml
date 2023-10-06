@@ -17,7 +17,7 @@ jobs:
         uses: matlab-actions/run-build@v1
       - name: Package artifacts
         uses: dorny/test-reporter@v1
-        if: success() || failure()    
+        if: success() || failure()
         with:
           name: MATLAB Test Results
           path: 'results.xml'    
