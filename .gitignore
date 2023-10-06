@@ -1,5 +1,8 @@
 # Folders
 .buildtool
 
+tests/results
+tests/coverage
+
 # File Extensions
 *.asv
