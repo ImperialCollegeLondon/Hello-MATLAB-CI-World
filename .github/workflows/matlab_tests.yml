@@ -12,7 +12,7 @@ jobs:
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1
         with: 
-          release: R2023a
+          release: R2023b
       - name: Run build tool
         uses: matlab-actions/run-build@v1
       - name: Package artifacts
