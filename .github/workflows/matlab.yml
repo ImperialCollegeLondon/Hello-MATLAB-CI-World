@@ -2,7 +2,6 @@ name: Run MATLAB Automation
 on: [push]
 
 jobs:
-  build:
 
   test:
     name: Run MATLAB Tests and Generate Artifacts
