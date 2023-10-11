@@ -20,6 +20,11 @@ jobs:
         if: success() || failure()
         with:
           name: MATLAB Test Results
-          path: 'results.xml'    
+          path: 'results.xml'
           working-directory: 'tests/artifacts'
           reporter: java-junit
+      - name: Report coverage
+        uses: 5monkeys/cobertura-action@master
+        with:
+          path: 'tests/artifacts/coverage.xml'
+          minimum_coverage: 75
