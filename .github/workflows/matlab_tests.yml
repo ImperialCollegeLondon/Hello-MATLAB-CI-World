@@ -27,4 +27,6 @@ jobs:
         uses: 5monkeys/cobertura-action@master
         with:
           path: 'tests/artifacts/coverage.xml'
+          only_changed_files: 1
           minimum_coverage: 75
+          report_name: Coverage Report
