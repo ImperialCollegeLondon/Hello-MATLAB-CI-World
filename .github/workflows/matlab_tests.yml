@@ -27,6 +27,10 @@ jobs:
         uses: 5monkeys/cobertura-action@master
         with:
           path: 'tests/artifacts/coverage.xml'
-          only_changed_files: 1
+          only_changed_files: true
           minimum_coverage: 75
-          report_name: Coverage Report
+          report_name: 'Coverage Report'
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: 'tests/artifacts/coverage.xml'
