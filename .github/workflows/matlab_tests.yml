@@ -5,16 +5,16 @@ jobs:
 
   test:
     name: Run MATLAB Tests and Package Artifacts
-    runs-on: ubuntu-latest
+    runs-on: ic-czc2399tyl
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Set up MATLAB
-        uses: matlab-actions/setup-matlab@v1
-        with: 
+        uses: matlab-actions/setup-matlab@v1.2.5
+        with:
           release: R2023b
       - name: Run build tool
-        uses: matlab-actions/run-build@v1
+        uses: matlab-actions/run-build@v1.1.2
       - name: Package artifacts
         uses: dorny/test-reporter@v1
         if: success() || failure()
