@@ -1,5 +1,5 @@
 function value = helloWorld()
 % HELLOWORLD Return "Hello World".
     
-    value = "Hello Wrld";
+    value = "Hello World";
 end
