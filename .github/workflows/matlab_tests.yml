@@ -18,7 +18,7 @@ jobs:
           release: ${{ matrix.release }}
           products: Statistics_and_Machine_Learning_Toolbox
       - name: Run build tool
-        uses: matlab-actions/run-build@v1.1.2
+        uses: matlab-actions/run-build@v2.2.1
       - name: Package artifacts
         uses: dorny/test-reporter@v1
         if: success() || failure()
