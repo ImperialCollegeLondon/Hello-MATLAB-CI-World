@@ -5,14 +5,18 @@ jobs:
 
   test:
     name: Run MATLAB Tests and Package Artifacts
+    strategy:
+      matrix:
+        release: ["R2023b", "R2024a"]
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Set up MATLAB
-        uses: matlab-actions/setup-matlab@v1.2.5
+        uses: matlab-actions/setup-matlab@v2.1.2
         with:
-          release: R2023b
+          release: ${{ matrix.release }}
+          products: Statistics_and_Machine_Learning_Toolbox
       - name: Run build tool
         uses: matlab-actions/run-build@v1.1.2
       - name: Package artifacts
